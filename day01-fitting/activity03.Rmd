@@ -26,14 +26,7 @@ hfi %>%
 m_hr_ef <- lm(pf_score ~ hf_score + ef_score, data = hfi)
 tidy(m_hr_ef)
 ```
-```{r}
-ggpairs(m_hr_ef, upper = "panel", diag = "histogram", lower = "points", axisLabels = "none")
-```
-```{r}
-library(scatterplot3d)
-scatterplot3d(hfi$pf_score, hfi$hf_score, hfi$ef_score, 
-              type = "h", pch = 20, color = "blue")
-```
+
 ```{r}
 library(plotly)
 plot_ly(hfi, x = ~pf_score, y = ~hf_score, z = ~ef_score, 
